@@ -62,6 +62,13 @@
   return expandedSize;
 }
 
+- (UICollectionViewLayoutAttributes *) layoutAttributesForSupplementaryViewOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewLayoutAttributes * attribute = [super layoutAttributesForSupplementaryViewOfKind:elementKind atIndexPath:indexPath];
+    [self modifyLayoutAttribute:attribute];
+    return attribute;
+}
+
 - (UICollectionViewLayoutAttributes *) layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
   UICollectionViewLayoutAttributes * attribute = [super layoutAttributesForItemAtIndexPath:indexPath];
